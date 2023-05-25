@@ -1,50 +1,14 @@
-import styled from "styled-components";
-import { ICart } from "../interfaces/Item";
-import Button from "./Button";
-import LoadingSpinner from "./LoadingSpinner";
+import { MainButton } from "./Buttons";
+import LoadingSpinner from "../helpers/Loading";
+import { Discount, Line, StyledSummary } from "../styles/SummaryStyles";
+import { useContext } from "react";
+import { ProductContext } from "../contexts/ProductContext";
 
-const Line = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  justify-content: space-between;
-  width: 90%;
-  height: 22px;
-  font-weight: 400;
-  line-height: 16px;
-
-  &:last-of-type {
-    font-weight: 700;
-  }
-  &:last-of-type span {
-    font-size: 16px;
-  }
-`;
-
-const StyledSummary = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 28px;
-  padding: 0px;
-  gap: 8px;
-`;
-
-const Discount = styled.span`
-  font-weight: 700;
-  color: #9222dc;
-`;
-
-type SummaryProps = {
-  data: ICart;
-  loading: boolean;
-};
-
-const Summary: React.FC<SummaryProps> = ({ data, loading }: SummaryProps) => {
+const Summary: React.FC = () => {
+  const { data, isLoading } = useContext(ProductContext);
   const { items, total, shippingTotal, discount, subTotal } = data;
 
-  if (loading) {
+  if (isLoading) {
     return (
       <StyledSummary
         style={{
@@ -99,7 +63,6 @@ const Summary: React.FC<SummaryProps> = ({ data, loading }: SummaryProps) => {
           })}
         </span>
       </Line>
-      <Button>Seguir para o pagamento</Button>
     </StyledSummary>
   );
 };
