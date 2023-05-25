@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { IProducts } from "../interfaces/Item";
 import { useEffect } from "react";
-import LoadingIcon from "../components/LoadingIcon";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const BagSection = styled.section`
   padding: 20px 8px;
@@ -57,23 +57,6 @@ const MaxPrice = styled.p`
 const Price = styled.p`
   font-weight: 700;
   text-align: right;
-`;
-
-const Spinner = ({ className }: any): JSX.Element => (
-  <LoadingIcon className={className} />
-);
-
-const LoadingSpinner = styled(Spinner)`
-  animation: rotation 1s infinite linear;
-
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
-  }
 `;
 
 type BagProps = {
