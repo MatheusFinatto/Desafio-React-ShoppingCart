@@ -13,11 +13,7 @@ const LoadingIcon = (props: any) => (
   </svg>
 );
 
-const Spinner = ({ className }: any): JSX.Element => (
-  <LoadingIcon className={className} />
-);
-
-const LoadingSpinner = styled(Spinner)`
+const LoadingSpinner = styled(LoadingIcon)`
   animation: rotation 1s infinite linear;
 
   @keyframes rotation {
