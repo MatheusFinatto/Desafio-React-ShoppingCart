@@ -1,8 +1,7 @@
-import { MainButton } from "./Buttons";
-import LoadingSpinner from "../helpers/Loading";
 import { Discount, Line, StyledSummary } from "../styles/SummaryStyles";
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
+import { LoadingSpinner } from "../helpers/Loading";
 
 const Summary: React.FC = () => {
   const { data, isLoading } = useContext(ProductContext);
@@ -37,7 +36,7 @@ const Summary: React.FC = () => {
         </span>
       </Line>
       <Line>
-        <span>Frete</span>
+        <span>Frete:</span>
         <span>
           {shippingTotal.toLocaleString("pt-br", {
             style: "currency",
@@ -46,7 +45,7 @@ const Summary: React.FC = () => {
         </span>
       </Line>
       <Line>
-        <span>Desconto</span>
+        <span>Desconto:</span>
         <Discount>
           {discount.toLocaleString("pt-br", {
             style: "currency",

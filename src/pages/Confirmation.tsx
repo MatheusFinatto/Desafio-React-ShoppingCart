@@ -15,7 +15,7 @@ const Confirmation: React.FC = () => {
   return (
     <>
       <ContentSection>
-        <Products />
+        <Products isConfirmation />
       </ContentSection>
       <Summary />
       <ReturnButton to={"/sacola"}>Voltar ao início do protótipo</ReturnButton>
