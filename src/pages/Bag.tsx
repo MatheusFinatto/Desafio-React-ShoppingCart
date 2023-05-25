@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { ICart, IProducts } from "../interfaces/Item";
+import { IProducts } from "../interfaces/Item";
+import { useEffect } from "react";
+import LoadingIcon from "../components/LoadingIcon";
 
 const BagSection = styled.section`
   padding: 20px 8px;
@@ -57,19 +59,57 @@ const Price = styled.p`
   text-align: right;
 `;
 
+const Spinner = ({ className }: any): JSX.Element => (
+  <LoadingIcon className={className} />
+);
+
+const LoadingSpinner = styled(Spinner)`
+  animation: rotation 1s infinite linear;
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+`;
+
 type BagProps = {
   data: {
     items: IProducts[];
   };
+  loading: boolean;
 };
 
 type BagType = React.FC<BagProps>;
 
-const Bag: BagType = ({ data }: BagProps): JSX.Element => {
+const Bag: BagType = ({ data, loading }: BagProps): JSX.Element => {
+  useEffect(() => {
+    console.log(loading);
+  }, [loading]);
+
+  if (loading) {
+    return (
+      <BagSection>
+        <Box
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <LoadingSpinner />
+        </Box>
+      </BagSection>
+    );
+  }
+
   return (
     <BagSection>
       <Box>
-        {data.items?.map((item: IProducts) => (
+        {data.items.map((item: IProducts) => (
           <Item key={item.product.sku}>
             <Image
               src={`${item.product.imageObjects[0].small}`}
