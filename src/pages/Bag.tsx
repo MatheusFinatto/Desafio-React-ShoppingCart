@@ -69,10 +69,6 @@ type BagProps = {
 type BagType = React.FC<BagProps>;
 
 const Bag: BagType = ({ data, loading }: BagProps): JSX.Element => {
-  useEffect(() => {
-    console.log(loading);
-  }, [loading]);
-
   if (loading) {
     return (
       <BagSection>

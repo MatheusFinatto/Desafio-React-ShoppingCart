@@ -31,7 +31,7 @@ const List = styled.ul`
   width: 100%;
   list-style: none;
   justify-content: center;
-  padding: 8px;
+  padding: 8px 0;
   align-items: center;
 `;
 

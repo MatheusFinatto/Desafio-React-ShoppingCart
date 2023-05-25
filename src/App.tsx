@@ -46,7 +46,7 @@ function App() {
         </Route>
       </Routes>
       <Outlet />
-      <Summary data={data} />
+      <Summary data={data} loading={isLoading} />
     </div>
   );
 }
