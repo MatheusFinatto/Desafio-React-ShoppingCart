@@ -39,7 +39,6 @@ export const Input = styled.input`
   letter-spacing: 0em;
   text-align: left;
   padding: 0 14px;
-
   &::placeholder {
     color: #ccc;
   }

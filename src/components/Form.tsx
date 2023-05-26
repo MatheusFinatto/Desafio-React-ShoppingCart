@@ -12,6 +12,7 @@ import {
   Input,
   DividedInputsContainer,
 } from "../styles/FormStyles/FormStyles";
+import handleCreditCardNumberChange from "../helpers/CreditCard/handleCreditCardNumberChange";
 
 type FormProps = {
   onSubmit: SubmitHandler<ICartaoCredito>;
@@ -25,13 +26,27 @@ const Form = ({ onSubmit, register, handleSubmit }: FormProps) => {
       <FormTitle>Cartão de crédito</FormTitle>
 
       <InputContainer>
-        <Label htmlFor="firstName">Número</Label>
-        <Input {...register("number")} placeholder="0000 0000 0000 0000" />
+        <Label htmlFor="cardNumber">Número</Label>
+        <Input
+          {...register("cardNumber", {
+            pattern: /^[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}$/,
+          })}
+          placeholder="0000 0000 0000 0000"
+          maxLength={19}
+          type="text"
+          name="cardNumber"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            handleCreditCardNumberChange(e, register)
+          }
+        />
       </InputContainer>
 
       <InputContainer>
-        <Label htmlFor="name">Nome do titular no cartão</Label>
-        <Input {...register("name")} placeholder="Nome impresso no cartão" />
+        <Label htmlFor="cardName">Nome do titular no cartão</Label>
+        <Input
+          {...register("cardName")}
+          placeholder="Nome impresso no cartão"
+        />
       </InputContainer>
 
       <DividedInputsContainer>

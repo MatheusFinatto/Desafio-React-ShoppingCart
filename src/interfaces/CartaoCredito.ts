@@ -1,6 +1,6 @@
 export interface ICartaoCredito {
-  number: number;
-  name: string;
+  cardNumber: string;
+  cardName: string;
   expirationDate: string;
   cvv: number;
 }
