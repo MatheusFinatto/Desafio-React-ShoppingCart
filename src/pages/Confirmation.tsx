@@ -1,11 +1,10 @@
 import ContentSection from "../styles/ContentSectionStyle";
-
 import { ProductContext } from "../contexts/ProductContext";
 import { useContext } from "react";
 import Products from "../components/Products";
 import Summary from "../components/Summary";
-import { ReturnButton } from "../components/Buttons";
 import LoadingBox from "../helpers/Loading";
+import ReturnButton from "../components/Buttons/ReturnButton";
 
 const Confirmation: React.FC = () => {
   const { isLoading } = useContext(ProductContext);

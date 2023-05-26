@@ -1,36 +1,37 @@
 import { styled } from "styled-components";
 
-const ContentBox = styled.div`
+export const ContentBox = styled.div`
   background-color: white;
-  width: 357px;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   border: 1px solid #ccc;
-  padding-top: 24px;
+  width: 100%;
 `;
 
-const ItemDisplay = styled.ul``;
+export const ItemDisplay = styled.ul`
+  margin-top: 24px;
+`;
 
-const Item = styled.li`
+export const Item = styled.li`
   display: flex;
   padding: 0 9.5px;
   overflow: hidden;
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   height: 60px;
   width: 60px;
   margin-bottom: 40px;
 `;
 
-const ItemName = styled.p`
+export const ItemName = styled.p`
   font-size: 12px;
   padding: 0 15px;
   line-height: 16px;
 `;
 
-const Prices = styled.div`
+export const Prices = styled.div`
   display: flex;
   flex-direction: column;
   line-height: 16px;
@@ -38,18 +39,18 @@ const Prices = styled.div`
   font-family: Arial;
 `;
 
-const MaxPrice = styled.p`
+export const MaxPrice = styled.p`
   font-weight: 400;
   color: #9b9b9b;
   text-decoration: line-through;
 `;
 
-const Price = styled.p`
+export const Price = styled.p`
   font-weight: 700;
   text-align: right;
 `;
 
-const StyledProdutosTitle = styled.h2`
+export const StyledProdutosTitle = styled.h2`
   font-family: Jost;
   font-size: 20px;
   font-weight: 400;
@@ -59,15 +60,3 @@ const StyledProdutosTitle = styled.h2`
   width: calc(100% - 20px);
   margin-left: 10px;
 `;
-
-export {
-  ContentBox,
-  ItemDisplay,
-  Item,
-  Image,
-  ItemName,
-  Prices,
-  MaxPrice,
-  Price,
-  StyledProdutosTitle,
-};

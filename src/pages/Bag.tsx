@@ -3,8 +3,8 @@ import Products from "../components/Products";
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import Summary from "../components/Summary";
-import { MainButton } from "../components/Buttons";
 import LoadingBox from "../helpers/Loading";
+import MainButton from "../components/Buttons/MainButton";
 
 const Bag: React.FC = () => {
   const { isLoading } = useContext(ProductContext);
