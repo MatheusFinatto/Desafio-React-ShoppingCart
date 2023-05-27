@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ProductContext } from "../../../contexts/ProductContext";
-import { LoadingSpinner } from "../../../helpers/Loading";
+import { LoadingSpinner } from "../../Loading";
 
 import Discount from "../styles/Discount";
 import StyledSummary from "../styles/StyledSummary";

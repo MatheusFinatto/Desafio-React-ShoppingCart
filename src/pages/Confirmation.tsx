@@ -3,7 +3,7 @@ import { ProductContext } from "../contexts/ProductContext";
 import { useContext } from "react";
 import Products from "../components/Products/components/Products";
 import Summary from "../components/Summary/components/Summary";
-import LoadingBox from "../helpers/Loading";
+import LoadingBox from "../components/Loading";
 import ReturnButton from "../components/Buttons/components/ReturnButton";
 
 const Confirmation: React.FC = () => {

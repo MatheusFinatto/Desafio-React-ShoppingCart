@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import Summary from "../components/Summary/components/Summary";
-import LoadingBox from "../helpers/Loading";
+import LoadingBox from "../components/Loading";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Form from "../components/Form/components/Form";
 import { ICartaoCredito } from "../interfaces/CartaoCredito";
