@@ -1,14 +1,12 @@
-import ContentSection from "../styles/ContentSectionStyle";
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import Summary from "../components/Summary/components/Summary";
-
 import LoadingBox from "../helpers/Loading";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Form from "../components/Form/components/Form";
 import { ICartaoCredito } from "../interfaces/CartaoCredito";
 import MainButton from "../components/Buttons/components/MainButton";
-import ContentBox from "../components/Products/styles/ContentBox";
+import ContentSection from "../styles/ContentSectionStyle";
 
 const Payment: React.FC = () => {
   const { isLoading } = useContext(ProductContext);
@@ -20,13 +18,11 @@ const Payment: React.FC = () => {
   return (
     <>
       <ContentSection>
-        <ContentBox>
-          <Form
-            onSubmit={onSubmit}
-            register={register}
-            handleSubmit={handleSubmit}
-          />
-        </ContentBox>
+        <Form
+          onSubmit={onSubmit}
+          register={register}
+          handleSubmit={handleSubmit}
+        />
       </ContentSection>
       <Summary />
       <MainButton onClick={handleSubmit(onSubmit)} to={"/confirmacao"}>
