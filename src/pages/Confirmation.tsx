@@ -1,4 +1,4 @@
-import ContentSection from "../styles/ContentSectionStyle";
+import ContentSection from "../styles/Content/ContentSectionStyle";
 import { ProductContext } from "../contexts/ProductContext";
 import { useContext } from "react";
 import Products from "../components/Products";

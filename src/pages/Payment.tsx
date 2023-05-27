@@ -1,5 +1,4 @@
-import ContentSection from "../styles/ContentSectionStyle";
-import { ContentBox } from "../styles/ProductsStyles";
+import ContentSection from "../styles/Content/ContentSectionStyle";
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import Summary from "../components/Summary";
@@ -9,6 +8,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import Form from "../components/Form";
 import { ICartaoCredito } from "../interfaces/CartaoCredito";
 import MainButton from "../components/Buttons/MainButton";
+import ContentBox from "../styles/Products/ContentBox";
 
 const Payment: React.FC = () => {
   const { isLoading } = useContext(ProductContext);

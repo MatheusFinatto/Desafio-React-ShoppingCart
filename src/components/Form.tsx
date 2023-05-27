@@ -4,15 +4,13 @@ import {
   UseFormRegister,
 } from "react-hook-form";
 import { ICartaoCredito } from "../interfaces/CartaoCredito";
-import {
-  StyledForm,
-  FormTitle,
-  InputContainer,
-  Label,
-  Input,
-  DividedInputsContainer,
-} from "../styles/FormStyles/FormStyles";
 import handleCreditCardNumberChange from "../helpers/CreditCard/handleCreditCardNumberChange";
+import DividedInputsContainer from "../styles/FormStyles/DividedFormInputContainer";
+import FormTitle from "../styles/FormStyles/FormTitle";
+import StyledForm from "../styles/FormStyles/StyledForm";
+import FormLabel from "../styles/FormStyles/FormLabel";
+import FormInput from "../styles/FormStyles/FormInput";
+import FormInputContainer from "../styles/FormStyles/FormInputContainer";
 
 type FormProps = {
   onSubmit: SubmitHandler<ICartaoCredito>;
@@ -25,9 +23,9 @@ const Form = ({ onSubmit, register, handleSubmit }: FormProps) => {
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <FormTitle>Cartão de crédito</FormTitle>
 
-      <InputContainer>
-        <Label htmlFor="cardNumber">Número</Label>
-        <Input
+      <FormInputContainer>
+        <FormLabel htmlFor="cardNumber">Número</FormLabel>
+        <FormInput
           {...register("cardNumber", {
             pattern: /^[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}$/,
           })}
@@ -39,26 +37,26 @@ const Form = ({ onSubmit, register, handleSubmit }: FormProps) => {
             handleCreditCardNumberChange(e, register)
           }
         />
-      </InputContainer>
+      </FormInputContainer>
 
-      <InputContainer>
-        <Label htmlFor="cardName">Nome do titular no cartão</Label>
-        <Input
+      <FormInputContainer>
+        <FormLabel htmlFor="cardName">Nome do titular no cartão</FormLabel>
+        <FormInput
           {...register("cardName")}
           placeholder="Nome impresso no cartão"
         />
-      </InputContainer>
+      </FormInputContainer>
 
       <DividedInputsContainer>
-        <InputContainer>
-          <Label htmlFor="expirationDate">Data de validade</Label>
-          <Input {...register("expirationDate")} placeholder="MM/AA" />
-        </InputContainer>
+        <FormInputContainer>
+          <FormLabel htmlFor="expirationDate">Data de validade</FormLabel>
+          <FormInput {...register("expirationDate")} placeholder="MM/AA" />
+        </FormInputContainer>
 
-        <InputContainer>
-          <Label htmlFor="cvv">Código CVV:</Label>
-          <Input {...register("cvv")} placeholder="000" />
-        </InputContainer>
+        <FormInputContainer>
+          <FormLabel htmlFor="cvv">Código CVV:</FormLabel>
+          <FormInput {...register("cvv")} placeholder="000" />
+        </FormInputContainer>
       </DividedInputsContainer>
     </StyledForm>
   );

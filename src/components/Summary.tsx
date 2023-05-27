@@ -1,7 +1,9 @@
-import { Discount, Line, StyledSummary } from "../styles/SummaryStyles";
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import { LoadingSpinner } from "../helpers/Loading";
+import StyledSummary from "../styles/Summary/StyledSummary";
+import SummaryLine from "../styles/Summary/SummaryLine";
+import Discount from "../styles/Summary/Discount";
 
 const Summary: React.FC = () => {
   const { data, isLoading } = useContext(ProductContext);
@@ -23,7 +25,7 @@ const Summary: React.FC = () => {
 
   return (
     <StyledSummary>
-      <Line>
+      <SummaryLine>
         <span>
           Produtos: ({data.items.length}
           {items.length === 1 ? " item" : " itens"})
@@ -34,8 +36,8 @@ const Summary: React.FC = () => {
             currency: "BRL",
           })}
         </span>
-      </Line>
-      <Line>
+      </SummaryLine>
+      <SummaryLine>
         <span>Frete:</span>
         <span>
           {shippingTotal.toLocaleString("pt-br", {
@@ -43,8 +45,8 @@ const Summary: React.FC = () => {
             currency: "BRL",
           })}
         </span>
-      </Line>
-      <Line>
+      </SummaryLine>
+      <SummaryLine>
         <span>Desconto:</span>
         <Discount>
           {discount.toLocaleString("pt-br", {
@@ -52,8 +54,8 @@ const Summary: React.FC = () => {
             currency: "BRL",
           })}
         </Discount>
-      </Line>
-      <Line>
+      </SummaryLine>
+      <SummaryLine>
         <span>Subtotal</span>
         <span>
           {total.toLocaleString("pt-br", {
@@ -61,7 +63,7 @@ const Summary: React.FC = () => {
             currency: "BRL",
           })}
         </span>
-      </Line>
+      </SummaryLine>
     </StyledSummary>
   );
 };
