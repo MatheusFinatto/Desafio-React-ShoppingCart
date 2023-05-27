@@ -1,14 +1,14 @@
-import ContentSection from "../styles/Content/ContentSectionStyle";
+import ContentSection from "../styles/ContentSectionStyle";
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
-import Summary from "../components/Summary";
+import Summary from "../components/Summary/components/Summary";
 
 import LoadingBox from "../helpers/Loading";
 import { useForm, SubmitHandler } from "react-hook-form";
-import Form from "../components/Form";
+import Form from "../components/Form/components/Form";
 import { ICartaoCredito } from "../interfaces/CartaoCredito";
-import MainButton from "../components/Buttons/MainButton";
-import ContentBox from "../styles/Products/ContentBox";
+import MainButton from "../components/Buttons/components/MainButton";
+import ContentBox from "../components/Products/styles/ContentBox";
 
 const Payment: React.FC = () => {
   const { isLoading } = useContext(ProductContext);

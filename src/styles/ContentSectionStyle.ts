@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-//the main "body" of the page, where the pages are rendered
+//the base for the content section throughout each page
 
 const ContentSection = styled.section`
   padding: 20px 8px;

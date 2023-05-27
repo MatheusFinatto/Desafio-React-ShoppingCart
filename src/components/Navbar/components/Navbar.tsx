@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
-import StyledLink from "../styles/Navbar/StyledLink";
-import NavList from "../styles/Navbar/NavList";
+
+import NavList from "../styles/NavList";
+import StyledLink from "../styles/StyledLink";
 
 const Navbar = () => {
   return (

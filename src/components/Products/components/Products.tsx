@@ -1,15 +1,15 @@
 import { useContext } from "react";
-import { ProductContext } from "../contexts/ProductContext";
-import moneyFormatter from "../helpers/moneyFormatter";
-import ContentBox from "../styles/Products/ContentBox";
-import ItemDisplay from "../styles/Products/ItemDisplay";
-import ItemName from "../styles/Products/ItemName";
-import MaxPrice from "../styles/Products/MaxPrice";
-import Price from "../styles/Products/Price";
-import Prices from "../styles/Products/Prices";
-import StyledProdutosTitle from "../styles/Products/StyledProdutosTitle";
-import Item from "../styles/Products/item";
-import Image from "../styles/Products/Image";
+import { ProductContext } from "../../../contexts/ProductContext";
+import moneyFormatter from "../../../helpers/moneyFormatter";
+import ContentBox from "../styles/ContentBox";
+import ItemDisplay from "../styles/ItemDisplay";
+import ItemName from "../styles/ItemName";
+import MaxPrice from "../styles/MaxPrice";
+import Price from "../styles/Price";
+import Prices from "../styles/Prices";
+import StyledProdutosTitle from "../styles/StyledProdutosTitle";
+import Item from "../styles/item";
+import Image from "../styles/Image";
 
 interface ProductsProps {
   isConfirmation?: boolean;

@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import { ProductContext } from "../contexts/ProductContext";
-import { LoadingSpinner } from "../helpers/Loading";
-import StyledSummary from "../styles/Summary/StyledSummary";
-import SummaryLine from "../styles/Summary/SummaryLine";
-import Discount from "../styles/Summary/Discount";
+import { ProductContext } from "../../../contexts/ProductContext";
+import { LoadingSpinner } from "../../../helpers/Loading";
+
+import Discount from "../styles/Discount";
+import StyledSummary from "../styles/StyledSummary";
+import SummaryLine from "../styles/SummaryLine";
 
 const Summary: React.FC = () => {
   const { data, isLoading } = useContext(ProductContext);

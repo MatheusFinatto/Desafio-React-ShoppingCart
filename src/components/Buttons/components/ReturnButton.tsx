@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import StyledReturnButton from "../../styles/Buttons/StyledReturnButton";
+import StyledReturnButton from "../styles/StyledReturnButton";
 
 type ButtonProps = {
   children: React.ReactNode;

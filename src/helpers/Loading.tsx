@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import ContentSection from "../styles/Content/ContentSectionStyle";
-import ContentBox from "../styles/Products/ContentBox";
+import ContentSection from "../styles/ContentSectionStyle";
+import ContentBox from "../components/Products/styles/ContentBox";
 
 const LoadingIcon = () => (
   <svg

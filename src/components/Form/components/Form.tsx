@@ -3,14 +3,14 @@ import {
   UseFormHandleSubmit,
   UseFormRegister,
 } from "react-hook-form";
-import { ICartaoCredito } from "../interfaces/CartaoCredito";
-import handleCreditCardNumberChange from "../helpers/CreditCard/handleCreditCardNumberChange";
-import DividedInputsContainer from "../styles/FormStyles/DividedFormInputContainer";
-import FormTitle from "../styles/FormStyles/FormTitle";
-import StyledForm from "../styles/FormStyles/StyledForm";
-import FormLabel from "../styles/FormStyles/FormLabel";
-import FormInput from "../styles/FormStyles/FormInput";
-import FormInputContainer from "../styles/FormStyles/FormInputContainer";
+import { ICartaoCredito } from "../../../interfaces/CartaoCredito";
+import handleCreditCardNumberChange from "../../../helpers/CreditCard/handleCreditCardNumberChange";
+import DividedInputsContainer from "../styles/DividedFormInputContainer";
+import FormInput from "../styles/FormInput";
+import FormInputContainer from "../styles/FormInputContainer";
+import FormLabel from "../styles/FormLabel";
+import FormTitle from "../styles/FormTitle";
+import StyledForm from "../styles/StyledForm";
 
 type FormProps = {
   onSubmit: SubmitHandler<ICartaoCredito>;
@@ -52,7 +52,6 @@ const Form = ({ onSubmit, register, handleSubmit }: FormProps) => {
           <FormLabel htmlFor="expirationDate">Data de validade</FormLabel>
           <FormInput {...register("expirationDate")} placeholder="MM/AA" />
         </FormInputContainer>
-
         <FormInputContainer>
           <FormLabel htmlFor="cvv">Código CVV:</FormLabel>
           <FormInput {...register("cvv")} placeholder="000" />
