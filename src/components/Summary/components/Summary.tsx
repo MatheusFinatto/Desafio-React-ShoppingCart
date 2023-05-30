@@ -1,28 +1,14 @@
 import { useContext } from "react";
 import { ProductContext } from "../../../contexts/ProductContext";
-import { LoadingSpinner } from "../../Loading";
 
 import Discount from "../styles/Discount";
 import StyledSummary from "../styles/StyledSummary";
 import SummaryLine from "../styles/SummaryLine";
+import LoadingIconSVG from "../../Loading/styles/LoadingIconSVG";
 
 const Summary: React.FC = () => {
-  const { data, isLoading } = useContext(ProductContext);
+  const { data } = useContext(ProductContext);
   const { items, total, shippingTotal, discount, subTotal } = data;
-
-  if (isLoading) {
-    return (
-      <StyledSummary
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <LoadingSpinner />
-      </StyledSummary>
-    );
-  }
 
   return (
     <StyledSummary>

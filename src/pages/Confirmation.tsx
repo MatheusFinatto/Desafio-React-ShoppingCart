@@ -3,13 +3,13 @@ import { ProductContext } from "../contexts/ProductContext";
 import { useContext } from "react";
 import Products from "../components/Products/components/Products";
 import Summary from "../components/Summary/components/Summary";
-import LoadingBox from "../components/Loading";
+import LoadingBox from "../components/Loading/components/Loading";
 import ReturnButton from "../components/Buttons/components/ReturnButton";
 
 const Confirmation: React.FC = () => {
   const { isLoading } = useContext(ProductContext);
 
-  LoadingBox(isLoading);
+  if (isLoading) return <LoadingBox />;
 
   return (
     <>
