@@ -9,6 +9,7 @@ const StyledProdutosTitle = styled.h2`
   text-align: left;
   width: calc(100% - 20px);
   margin-left: 10px;
+  padding-top: 24px;
 `;
 
 export default StyledProdutosTitle;

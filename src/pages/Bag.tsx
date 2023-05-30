@@ -2,7 +2,7 @@ import ContentSection from "../styles/ContentSectionStyle";
 import Products from "../components/Products/components/Products";
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
-import Summary from "../components/Summary/components/Summary";
+import Price from "../components/Prices/components/Prices";
 import LoadingBox from "../components/Loading/components/Loading";
 import MainButton from "../components/Buttons/components/MainButton";
 
@@ -16,7 +16,7 @@ const Bag: React.FC = () => {
       <ContentSection>
         <Products />
       </ContentSection>
-      <Summary />
+      <Price />
       <MainButton to={"/pagamento"}>Seguir para o pagamento</MainButton>
     </>
   );

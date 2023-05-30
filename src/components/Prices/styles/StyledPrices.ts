@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
-//the "body" of the shopping summary
+//the "body" of the shopping Price
 
-const StyledSummary = styled.section`
+const StyledPrices = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,4 +11,4 @@ const StyledSummary = styled.section`
   gap: 8px;
 `;
 
-export default StyledSummary;
+export default StyledPrices;

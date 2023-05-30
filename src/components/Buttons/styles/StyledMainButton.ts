@@ -15,6 +15,7 @@ const StyledMainButton = styled.button`
   align-items: center;
   justify-content: center;
   margin-top: 24px;
+  margin-bottom: 50px;
 `;
 
 export default StyledMainButton;

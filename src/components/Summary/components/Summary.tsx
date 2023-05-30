@@ -1,57 +1,39 @@
-import { useContext } from "react";
-import { ProductContext } from "../../../contexts/ProductContext";
+import { ICreditCard } from "../../../interfaces/ICreditCard";
+import ContentBox from "../../Products/styles/ContentBox";
 
-import Discount from "../styles/Discount";
-import StyledSummary from "../styles/StyledSummary";
-import SummaryLine from "../styles/SummaryLine";
-import LoadingIconSVG from "../../Loading/styles/LoadingIconSVG";
+type SummaryProps = {
+  data: ICreditCard;
+};
 
-const Summary: React.FC = () => {
-  const { data } = useContext(ProductContext);
-  const { items, total, shippingTotal, discount, subTotal } = data;
+const hideCardNumber = (cardNumber: string) => {
+  return "****.".repeat(3) + cardNumber.slice(-4);
+};
+
+const Summary = ({ data }: SummaryProps) => {
+  const { cardName, cardNumber, expirationDate, cvv } = data;
+
+  if (!cardName || !cardNumber || !expirationDate || !cvv) {
+    return (
+      <ContentBox>
+        <div style={{ textAlign: "center", margin: "16px 20px 24px 20px" }}>
+          <h2>Compra efetuada com sucesso</h2>
+          <p>****.****.****.4545</p>
+          <p>Bruce Wayne</p>
+          <p>02/2027</p>
+        </div>
+      </ContentBox>
+    );
+  }
 
   return (
-    <StyledSummary>
-      <SummaryLine>
-        <span>
-          Produtos: ({data.items.length}
-          {items.length === 1 ? " item" : " itens"})
-        </span>
-        <span>
-          {subTotal.toLocaleString("pt-br", {
-            style: "currency",
-            currency: "BRL",
-          })}
-        </span>
-      </SummaryLine>
-      <SummaryLine>
-        <span>Frete:</span>
-        <span>
-          {shippingTotal.toLocaleString("pt-br", {
-            style: "currency",
-            currency: "BRL",
-          })}
-        </span>
-      </SummaryLine>
-      <SummaryLine>
-        <span>Desconto:</span>
-        <Discount>
-          {discount.toLocaleString("pt-br", {
-            style: "currency",
-            currency: "BRL",
-          })}
-        </Discount>
-      </SummaryLine>
-      <SummaryLine>
-        <span>Subtotal</span>
-        <span>
-          {total.toLocaleString("pt-br", {
-            style: "currency",
-            currency: "BRL",
-          })}
-        </span>
-      </SummaryLine>
-    </StyledSummary>
+    <ContentBox>
+      <div style={{ textAlign: "center", margin: "16px 20px 24px 20px" }}>
+        <h2>Compra efetuada com sucesso</h2>
+        <p>{hideCardNumber(cardNumber)}</p>
+        <p>{cardName}</p>
+        <p>{expirationDate}</p>
+      </div>
+    </ContentBox>
   );
 };
 

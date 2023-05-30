@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const SummaryLine = styled.div`
+const PriceLine = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,4 +18,4 @@ const SummaryLine = styled.div`
   }
 `;
 
-export default SummaryLine;
+export default PriceLine;

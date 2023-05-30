@@ -11,9 +11,10 @@ import StyledProdutosTitle from "../styles/StyledProdutosTitle";
 import Item from "../styles/item";
 import Image from "../styles/Image";
 
-interface ProductsProps {
+type ProductsProps = {
   isConfirmation?: boolean;
-}
+};
+
 const Products: React.FC<ProductsProps> = ({ isConfirmation }) => {
   const { data } = useContext(ProductContext);
   const { items } = data;
@@ -22,7 +23,7 @@ const Products: React.FC<ProductsProps> = ({ isConfirmation }) => {
     <ContentBox>
       {isConfirmation && <StyledProdutosTitle>Produtos</StyledProdutosTitle>}
       <ItemDisplay>
-        {items.map(({ product }) => {
+        {items.map(({ product }: IProduct) => {
           const { price, maxPrice } = product.priceSpecification;
           const { small } = product.imageObjects[0];
 
