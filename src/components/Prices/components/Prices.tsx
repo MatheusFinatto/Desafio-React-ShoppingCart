@@ -4,7 +4,6 @@ import { ProductContext } from "../../../contexts/ProductContext";
 import Discount from "../styles/Discount";
 import StyledPrice from "../styles/StyledPrices";
 import PriceLine from "../styles/PricesLine";
-import LoadingIconSVG from "../../Loading/styles/LoadingIconSVG";
 
 const Price: React.FC = () => {
   const { data } = useContext(ProductContext);
