@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { ICart } from "../interfaces/Item";
+import { ICart } from "../interfaces/Product";
 
 export type ProductContextType = {
   data: ICart;

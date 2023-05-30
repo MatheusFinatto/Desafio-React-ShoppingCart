@@ -1,10 +1,10 @@
 import { UseFormRegister } from "react-hook-form";
 import formatCreditCardNumber from "./formatCreditCardNumber";
-import { ICartaoCredito } from "../../interfaces/CartaoCredito";
+import { ICreditCard } from "../../interfaces/CreditCard";
 
 const handleCreditCardNumberChange = (
   e: React.ChangeEvent<HTMLInputElement>,
-  register: UseFormRegister<ICartaoCredito>
+  register: UseFormRegister<ICreditCard>
 ) => {
   const formattedValue = formatCreditCardNumber(e.target.value);
   e.target.value = formattedValue;

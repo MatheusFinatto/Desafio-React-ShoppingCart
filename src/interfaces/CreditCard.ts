@@ -1,4 +1,4 @@
-export interface ICartaoCredito {
+export interface ICreditCard {
   cardNumber: string;
   cardName: string;
   expirationDate: string;

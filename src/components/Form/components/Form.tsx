@@ -3,7 +3,7 @@ import {
   UseFormHandleSubmit,
   UseFormRegister,
 } from "react-hook-form";
-import { ICartaoCredito } from "../../../interfaces/CartaoCredito";
+import { ICreditCard } from "../../../interfaces/CreditCard";
 import handleCreditCardNumberChange from "../../../helpers/CreditCard/handleCreditCardNumberChange";
 import DividedInputsContainer from "../styles/DividedFormInputContainer";
 import FormInput from "../styles/FormInput";
@@ -14,9 +14,9 @@ import StyledForm from "../styles/StyledForm";
 import ContentBox from "../../Products/styles/ContentBox";
 
 type FormProps = {
-  onSubmit: SubmitHandler<ICartaoCredito>;
-  register: UseFormRegister<ICartaoCredito>;
-  handleSubmit: UseFormHandleSubmit<ICartaoCredito>;
+  onSubmit: SubmitHandler<ICreditCard>;
+  register: UseFormRegister<ICreditCard>;
+  handleSubmit: UseFormHandleSubmit<ICreditCard>;
 };
 
 const Form = ({ onSubmit, register, handleSubmit }: FormProps) => {
