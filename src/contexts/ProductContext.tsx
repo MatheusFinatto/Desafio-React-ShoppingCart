@@ -1,12 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import { ICart } from "../interfaces/Product";
 
-export type ProductContextType = {
-  data: ICart;
-  isLoading: boolean;
-};
-
-const initialProductState: ProductContextType = {
+const initialProductState = {
   data: {
     subTotal: 0,
     shippingTotal: 0,
@@ -17,6 +11,8 @@ const initialProductState: ProductContextType = {
   isLoading: false,
 };
 
+type ProductContextType = typeof initialProductState;
+
 export const ProductContext =
   createContext<ProductContextType>(initialProductState);
 
@@ -25,7 +21,9 @@ type Props = {
 };
 
 const ProductContextProvider: React.FC<Props> = ({ children }) => {
-  const [data, setData] = useState<ICart>(initialProductState.data);
+  const [data, setData] = useState<ProductContextType["data"]>(
+    initialProductState.data
+  );
   const [isLoading, setIsLoading] = useState<boolean>(
     initialProductState.isLoading
   );
