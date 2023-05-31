@@ -5,10 +5,10 @@ import LoadingBox from "../components/Loading/components/Loading";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Form from "../components/Form/components/Form";
 import { ICreditCard } from "../interfaces/ICreditCard";
-import MainButton from "../components/Buttons/components/MainButton";
 import ContentSection from "../styles/ContentSectionStyle";
 import { PaymentContext } from "../contexts/PaymentContext";
 import { useNavigate } from "react-router-dom";
+import Button from "../components/Buttons/components/Button";
 
 const Payment: React.FC = () => {
   const {
@@ -44,9 +44,13 @@ const Payment: React.FC = () => {
         />
       </ContentSection>
       <Price />
-      <MainButton onClick={handleSubmit(onSubmit)} to={"/confirmacao"}>
+      <Button
+        onClick={handleSubmit(onSubmit)}
+        to={"/confirmacao"}
+        inputColor="#9222dc"
+      >
         Finalizar pedido
-      </MainButton>
+      </Button>
     </>
   );
 };

@@ -1,42 +1,29 @@
 import { Outlet } from "react-router-dom";
-
 import NavList from "../styles/NavList";
-import StyledLink from "../styles/StyledLink";
+import StyledLink, { isActiveType } from "../styles/StyledLink";
+
+const links = [
+  { label: "Sacola", path: "/sacola" },
+  { label: "Pagamento", path: "/pagamento" },
+  { label: "Confirmação", path: "/confirmacao" },
+];
 
 const Navbar = () => {
   return (
     <nav>
       <NavList>
-        <li>
-          <StyledLink
-            to="/sacola"
-            className={({ isActive }: { isActive: boolean }) =>
-              isActive ? "active" : ""
-            }
-          >
-            Sacola
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink
-            to="/pagamento"
-            className={({ isActive }: { isActive: boolean }) =>
-              isActive ? "active" : ""
-            }
-          >
-            Pagamento
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink
-            to="/confirmacao"
-            className={({ isActive }: { isActive: boolean }) =>
-              isActive ? "active" : ""
-            }
-          >
-            Confirmação
-          </StyledLink>
-        </li>
+        {links.map((link) => (
+          <li key={link.label}>
+            <StyledLink
+              className={({ isActive }: isActiveType) =>
+                isActive ? "active" : ""
+              }
+              to={link.path}
+            >
+              {link.label}
+            </StyledLink>
+          </li>
+        ))}
       </NavList>
       <Outlet />
     </nav>

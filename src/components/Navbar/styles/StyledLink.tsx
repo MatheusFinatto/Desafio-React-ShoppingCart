@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { styled } from "styled-components";
 
-type isActiveType = { isActive: boolean };
+export type isActiveType = { isActive: boolean };
 
 type LinkProps = {
   className: (isActive: isActiveType) => string;
